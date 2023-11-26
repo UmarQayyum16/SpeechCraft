@@ -1,13 +1,16 @@
+import streamlit.secrets
 import streamlit as st
 import os
-from openai import OpenAI
 from dotenv import load_dotenv
+from openai import OpenAI
 from pathlib import Path
 from PIL import Image
 
-#load_dotenv()
-openai_api_key = st.secrets["OPENAI_API_KEY"]
-openai.api_key = openai_api_key
+# Retrieve the OpenAI API key from Streamlit secrets
+openai_api_key = streamlit.secrets["OPENAI_API_KEY"]
+
+# Initialize OpenAI
+client = OpenAI(api_key=openai_api_key)
 
 # Declare global variables
 global prompt
