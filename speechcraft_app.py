@@ -1,8 +1,5 @@
 import streamlit as st
-import os
-from dotenv import load_dotenv
 from openai import OpenAI
-from pathlib import Path
 from PIL import Image
 
 # Retrieve the OpenAI API key from Streamlit secrets
