@@ -5,11 +5,9 @@ from dotenv import load_dotenv
 from pathlib import Path
 from PIL import Image
 
-# Load .env
-load_dotenv()
-
-# Initialize OpenAI
-client = OpenAI(api_key=os.environ['OPENAI_API_KEY'])
+#load_dotenv()
+openai_api_key = st.secrets["OPENAI_API_KEY"]
+openai.api_key = openai_api_key
 
 # Declare global variables
 global prompt
