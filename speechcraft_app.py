@@ -483,25 +483,11 @@ def main():
         generate_qna_checkbox = st.checkbox("Sample Q&A")
 
         # New section for LinkedIn link with icon and styling
+        st.markdown("# <span style='font-size:16px;'>Let's connect on LinkedIn:</span> ![LinkedIn](https://img.icons8.com/color/48/000000/linkedin.png)", unsafe_allow_html=True)
         linkedin_link = "www.linkedin.com/in/umarqayyum16"
 
-        # LinkedIn icon and link with styling
-        st.markdown(
-            f"""
-            <div style='display: flex; align-items: center;'>
-                <img src='https://img.icons8.com/color/48/000000/linkedin.png' alt='LinkedIn Icon' style='margin-right: 10px;'/>
-                <div>
-                    <h3 style='font-size: 16px; margin: 0;'>
-                        Let's Connect on LinkedIn
-                    </h3>
-                    <a href='https://{linkedin_link}' target='_blank' style='font-size: 16px; color: #0077B5; text-decoration: none;'>
-                        Umar Qayyum
-                    </a>
-                </div>
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
+        # LinkedIn link with styling
+        st.markdown(f"<a href='https://{linkedin_link}' target='_blank' style='font-size: 16px; color: #0077B5; text-decoration: none;'>Umar Qayyum</a>", unsafe_allow_html=True)
 
 
     # Generated output in the main section
