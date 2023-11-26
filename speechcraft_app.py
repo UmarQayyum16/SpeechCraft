@@ -1,4 +1,3 @@
-import streamlit.secrets
 import streamlit as st
 import os
 from dotenv import load_dotenv
@@ -7,7 +6,7 @@ from pathlib import Path
 from PIL import Image
 
 # Retrieve the OpenAI API key from Streamlit secrets
-openai_api_key = streamlit.secrets["OPENAI_API_KEY"]
+openai_api_key = st.secrets["OPENAI_API_KEY"]
 
 # Initialize OpenAI
 client = OpenAI(api_key=openai_api_key)
