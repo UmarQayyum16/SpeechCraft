@@ -443,13 +443,8 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# Full file path to the image
-file_path = r'C:\Users\USER\Desktop\SEMESTER 2 YEAR 4\Career\AI Technologist SHRDC\Generative Ai\OpenAi\Banner TalkCraft v2.png'
-
 # Load the image
-image = Image.open(file_path)
-
-
+image = Image.open("Banner TalkCraft v2.png")
 
 # Define Streamlit app
 def main():
