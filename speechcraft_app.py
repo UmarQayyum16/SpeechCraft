@@ -465,7 +465,7 @@ def main():
         tone = st.selectbox(" ", tone_choices, index=0, help="Choose the tone for your presentation.")
 
         st.markdown("# <span style='font-size:16px;'>Target Audience:</span>", unsafe_allow_html=True)
-        target_audience = st.text_input(" ", key="target_audience_input", placeholder="University Students", help="Specify the target audience for your presentation.")
+        target_audience = st.text_input(" ", key="target_audience_input", placeholder="e.g., University Students", help="Specify the target audience for your presentation.")
 
         st.markdown("# <span style='font-size:16px;'>Purpose:</span>", unsafe_allow_html=True)
         purpose = st.text_area(" ", key="purpose_input", height=150, placeholder="e.g., To equip individuals with real-world success stories and practical tips for developing and enhancing excellent communication skills, fostering positive and lasting changes in relationships.", help="State the purpose or goal of your presentation.")
