@@ -167,8 +167,13 @@ system_prompt_hook = f"""
 
     You need to provide: 
 
-    Captivating Hook: Engage the audience right from the start with a compelling hook and introduce the topic. Be reminded, that the length of a hook should align with the expected presentation duration. A common guideline is to allocate approximately 5-10% of your total presentation time for the introduction, including the hook. A typical hook should be around 80-150 WORDS ONLY
-
+    Captivating Hook: Engage the audience right from the start with a compelling hook and introduce the topic. 
+    Be reminded, that the length of a hook should align with the expected presentation duration. 
+    A common guideline is to allocate approximately 5-10% of your total presentation time for the introduction, including the hook. 
+    A typical hook should be around 80-150 WORDS ONLY. 
+    Only produce the hook as attention catching without covering the overall content of the presentation.
+    The salutaion used in the hook should be based on the target audience, input by user. 
+    
     Tailor your response to the given inputs:
     - Presentation topic: {{prompt}} 
     - Tone: {{tone}}
@@ -465,8 +470,8 @@ def main():
         target_audience = st.text_input(" ", key="target_audience_input", placeholder="e.g., University Students", help="Specify the target audience for your presentation.")
 
         st.markdown("# <span style='font-size:16px;'>Purpose:</span>", unsafe_allow_html=True)
-        purpose = st.text_area(" ", key="purpose_input", height=150, placeholder="e.g., To equip individuals with real-world success stories and practical tips for developing and enhancing excellent communication skills, fostering positive and lasting changes in relationships.", help="State the purpose or goal of your presentation.")
-
+        purpose = st.text_area(" ", key="purpose_input", height=150, placeholder="e.g., To equip individuals with real-world success stories and practical tips for developing and enhancing excellent communication skills, fostering positive and lasting changes in relationships.", help="State the purpose or goal of your presentation. Include any specific information, success stories, or key points you want to emphasize.")
+      
         st.markdown("# <span style='font-size:16px;'>Duration (minutes):</span>", unsafe_allow_html=True)
         expected_duration = st.slider(" ", key="duration_input", min_value=0, max_value=120, value=30, step=5, help="Select the expected duration of your presentation.")
 
