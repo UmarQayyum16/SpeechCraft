@@ -574,11 +574,14 @@ def main():
 
             # Function to generate spoken audio from input text
             def generate_spoken_audio(prompt, voice):
-                response = client.audio.speech.create(
-                    model="tts-1",
-                    voice=voice,
-                    input=prompt,
-                )
+              # Truncate the content to the maximum allowed characters
+              truncated_content = prompt[:4096]
+          
+              response = client.audio.speech.create(
+                  model="tts-1",
+                  voice=voice,
+                  input=truncated_content,
+              )
                 return response.content
 
             # Generate spoken audio
