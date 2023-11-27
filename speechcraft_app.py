@@ -446,17 +446,30 @@ st.set_page_config(
     theme="material",  # You can choose a built-in theme and customize it further if needed
 )
 
-# Add custom CSS for theme customization
-custom_css = f"""
-    :root {{
-        --primaryColor: #3B426B;
-        --backgroundColor: #D5E5FC;
-        --textColor: #272B41;
-        --secondaryBackgroundColor: #B0D1FC;
-    }}
+# Define custom CSS for theme customization
+custom_css = """
+    <style>
+        :root {
+            --primary-color: #3B426B;
+            --background-color: #D5E5FC;
+            --text-color: #272B41;
+            --secondary-background-color: #B0D1FC;
+        }
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+        .css-1aumxhk {
+            background-color: var(--primary-color);
+        }
+        .css-1aumaoh {
+            background-color: var(--secondary-background-color);
+        }
+    </style>
 """
 
-st.markdown(f'<style>{custom_css}</style>', unsafe_allow_html=True)
+# Apply custom CSS
+st.markdown(custom_css, unsafe_allow_html=True)
 
 
 # Load the image
