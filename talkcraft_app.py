@@ -503,6 +503,8 @@ def main():
             unsafe_allow_html=True
         )
 
+    # Show instruction
+    st.write("Instructions: Click the button below to generate the presentation.")
 
     # Generated output in the main section
     if st.button("Generate Presentation"):
