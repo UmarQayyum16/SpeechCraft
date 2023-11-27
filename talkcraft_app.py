@@ -587,12 +587,12 @@ def main():
             # Generate spoken audio
             audio_content = generate_spoken_audio(generated_speech, voice=voice)
 
-            # Display audio player
-            st.audio(audio_content, format="audio/mp3")
-
             # Display the styled speech
             st.subheader("Speech:")
             st.markdown(styled_speech, unsafe_allow_html=True)
+            
+            # Display audio player
+            st.audio(audio_content, format="audio/mp3")
 
         if generate_qna_checkbox:
             st.subheader("Sample Q&A:")
