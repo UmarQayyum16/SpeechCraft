@@ -446,7 +446,7 @@ st.set_page_config(
 )
 
 # Load the image
-image = Image.open("banner_speechcraft.png")
+image = Image.open("banner_talkcraft.png")
 
 # Define Streamlit app
 def main():
