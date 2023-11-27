@@ -443,11 +443,21 @@ st.set_page_config(
     page_icon="🌐",
     layout="wide",
     initial_sidebar_state="expanded",
-    primaryColor="#3B426B",
-    backgroundColor="#D5E5FC",
-    textColor="#272B41",
-    secondaryBackgroundColor="#B0D1FC"
+    theme="material",  # You can choose a built-in theme and customize it further if needed
 )
+
+# Add custom CSS for theme customization
+custom_css = f"""
+    :root {{
+        --primaryColor: #3B426B;
+        --backgroundColor: #D5E5FC;
+        --textColor: #272B41;
+        --secondaryBackgroundColor: #B0D1FC;
+    }}
+"""
+
+st.markdown(f'<style>{custom_css}</style>', unsafe_allow_html=True)
+
 
 # Load the image
 image = Image.open("banner_speechcraft.png")
