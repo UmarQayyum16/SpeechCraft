@@ -504,7 +504,7 @@ def main():
         )
 
     # Show instruction
-    st.write("Instructions: Click the button below to generate the presentation.")
+    st.write("Instruction: Click the button below to generate the presentation.")
 
     # Generated output in the main section
     if st.button("Generate Presentation"):
