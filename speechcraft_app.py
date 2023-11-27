@@ -437,13 +437,12 @@ def generate_qna(prompt, tone, target_audience,purpose,expected_duration):
     return qna_response.choices[0].message.content
 
 
-# Set the page configuration with custom theme colors
+# Set the page configuration
 st.set_page_config(
     page_title="SpeechCraft",
     page_icon="🌐",
     layout="wide",
     initial_sidebar_state="expanded",
-    theme="material",  
 )
 
 # Load the image
