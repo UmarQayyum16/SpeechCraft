@@ -381,6 +381,7 @@ def generate_speech(prompt, tone, target_audience, purpose, expected_duration):
 
     # Return the styled speech
     return styled_speech, generated_speech
+  
 # Define the system prompt
 system_prompt_qna = f"""
     You are an advanced AI presentation assistant, specializing in delivering captivating and informative presentations on a wide range of topics. Your goal is to craft a presentation with a tone that is both authoritative and approachable, emphasizing the significance of the given topic.
@@ -561,7 +562,6 @@ def main():
             escaped_outline = outline.replace("\n", "<br>")
             st.markdown(f'<div class="generated-content">{escaped_outline}</div>', unsafe_allow_html=True)
 
-       # Inside the main function, after generating speech
         if generate_speech_checkbox:
             # Generate speech and get the styled speech
             styled_speech, generated_speech = generate_speech(prompt, tone, target_audience, purpose, expected_duration)
