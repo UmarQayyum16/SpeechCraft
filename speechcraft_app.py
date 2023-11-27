@@ -443,34 +443,8 @@ st.set_page_config(
     page_icon="🌐",
     layout="wide",
     initial_sidebar_state="expanded",
-    theme="material",  # You can choose a built-in theme and customize it further if needed
+    theme="material",  
 )
-
-# Define custom CSS for theme customization
-custom_css = """
-    <style>
-        :root {
-            --primary-color: #3B426B;
-            --background-color: #D5E5FC;
-            --text-color: #272B41;
-            --secondary-background-color: #B0D1FC;
-        }
-        body {
-            background-color: var(--background-color);
-            color: var(--text-color);
-        }
-        .css-1aumxhk {
-            background-color: var(--primary-color);
-        }
-        .css-1aumaoh {
-            background-color: var(--secondary-background-color);
-        }
-    </style>
-"""
-
-# Apply custom CSS
-st.markdown(custom_css, unsafe_allow_html=True)
-
 
 # Load the image
 image = Image.open("banner_speechcraft.png")
