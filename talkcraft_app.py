@@ -327,7 +327,7 @@ As I leave you, remember Ralph Waldo Emerson's words: "What lies behind us and w
 """
 
 # Define the functions with the assistant content as an argument
-def generate_speech(prompt, tone, target_audience, purpose, expected_duration):
+def generate_speech(prompt, tone, target_audience, purpose, expected_duration, voice="alloy"):
     speech_response = client.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[
@@ -381,6 +381,7 @@ def generate_speech(prompt, tone, target_audience, purpose, expected_duration):
 
     # Return the styled speech
     return styled_speech, generated_speech
+
   
 # Define the system prompt
 system_prompt_qna = f"""
@@ -564,13 +565,33 @@ def main():
             escaped_outline = outline.replace("\n", "<br>")
             st.markdown(f'<div class="generated-content">{escaped_outline}</div>', unsafe_allow_html=True)
 
-        if generate_speech_checkbox:
+         if generate_speech_checkbox:
+            # Determine the voice based on the selected tone
+            voice = tone_to_voice_mapping.get(tone, "alloy")  # Default to "alloy" if tone is not in the mapping
+
             # Generate speech and get the styled speech
-            styled_speech, generated_speech = generate_speech(prompt, tone, target_audience, purpose, expected_duration)
+            styled_speech, generated_speech = generate_speech(prompt, tone, target_audience, purpose, expected_duration, voice=voice)
+
+            # Function to generate spoken audio from input text
+            def generate_spoken_audio(prompt, voice):
+                response = client.audio.speech.create(
+                    model="tts-1",
+                    voice=voice,
+                    input=prompt,
+                )
+                return response.content
+
+            # Generate spoken audio
+            audio_content = generate_spoken_audio(generated_speech, voice=voice)
+
+            # Display audio player
+            st.audio(audio_content, format="audio/mp3")
 
             # Display the styled speech
             st.subheader("Speech:")
             st.markdown(styled_speech, unsafe_allow_html=True)
+
+
 
 
         if generate_qna_checkbox:
