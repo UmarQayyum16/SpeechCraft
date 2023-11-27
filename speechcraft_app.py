@@ -439,7 +439,7 @@ def generate_qna(prompt, tone, target_audience,purpose,expected_duration):
 
 # Set the page configuration
 st.set_page_config(
-    page_title="SpeechCraft",
+    page_title="TalkCraft",
     page_icon="🌐",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -456,7 +456,7 @@ def main():
 
     # User input in the sidebar
     with st.sidebar:
-        st.markdown("<h1 style='color: #272B41;'>🌟 Your Input, Your Way</h2>", unsafe_allow_html=True)
+        st.markdown("<h1>🌟 Your Input, Your Way</h1>", unsafe_allow_html=True)
 
         # Your existing code for input fields
         st.markdown("# <span style='font-size:16px;'>Topic:</span>", unsafe_allow_html=True)
