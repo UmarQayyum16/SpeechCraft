@@ -464,7 +464,7 @@ def main():
         prompt = st.text_input(" ", key="topic_input", placeholder="e.g., Good Communication Skills", help="Enter the topic for your presentation.")
 
         st.markdown("# <span style='font-size:16px;'>Tone:</span>", unsafe_allow_html=True)
-        tone_choices = ["Inspirational", "Empathy", "Informative", "Formal", "Friendly", "Motivational", "Educational", "Professional", "Humorous", "Serious"]
+        tone_choices = ["Inspirational", "Empathy", "Informative", "Formal", "Friendly", "Motivational", "Educational", "Professional", "Humorous", "Serious", "Casual", "Persuasive", "Interactive", "Conversational"]
         tone = st.selectbox(" ", tone_choices, index=0, help="Choose the tone for your presentation.")
 
         st.markdown("# <span style='font-size:16px;'>Target Audience:</span>", unsafe_allow_html=True)
