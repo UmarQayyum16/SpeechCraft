@@ -565,7 +565,7 @@ def main():
             escaped_outline = outline.replace("\n", "<br>")
             st.markdown(f'<div class="generated-content">{escaped_outline}</div>', unsafe_allow_html=True)
 
-         if generate_speech_checkbox:
+        if generate_speech_checkbox:
             # Determine the voice based on the selected tone
             voice = tone_to_voice_mapping.get(tone, "alloy")  # Default to "alloy" if tone is not in the mapping
 
@@ -590,9 +590,6 @@ def main():
             # Display the styled speech
             st.subheader("Speech:")
             st.markdown(styled_speech, unsafe_allow_html=True)
-
-
-
 
         if generate_qna_checkbox:
             st.subheader("Sample Q&A:")
