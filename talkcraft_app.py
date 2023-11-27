@@ -461,7 +461,7 @@ def main():
 
         # Your existing code for input fields
         st.markdown("# <span style='font-size:16px;'>Topic:</span>", unsafe_allow_html=True)
-        prompt = st.text_area(" ", key="topic_input", height=150, placeholder="e.g., Good Communication Skills", help="Enter the topic for your presentation.")
+        prompt = st.text_area(" ", key="topic_input", height=50, placeholder="e.g., Good Communication Skills", help="Enter the topic for your presentation.")
 
         st.markdown("# <span style='font-size:16px;'>Tone:</span>", unsafe_allow_html=True)
         tone_choices = ["Inspirational", "Empathy", "Informative", "Formal", "Friendly", "Motivational", "Educational", "Professional", "Humorous", "Serious"]
