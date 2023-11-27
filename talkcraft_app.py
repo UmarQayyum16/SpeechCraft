@@ -586,7 +586,10 @@ def main():
 
             # Generate spoken audio
             audio_content = generate_spoken_audio(generated_speech, voice=voice)
-
+          
+            # Add vertical space before the st.audio
+            st.markdown("<br>", unsafe_allow_html=True)
+          
             # Display audio player
             st.audio(audio_content, format="audio/mp3")
           
